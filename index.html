@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2048 Game</title>
+    <link rel="stylesheet" href="../src/style.css" />
+    <script type="module" crossorigin src="/2048-games/assets/index-DUaXvfnu.js"></script>
+  </head>
+  <body>
+    <h1>2048</h1>
+    <hr />
+    <h2>Score: <span id="score">0</span></h2>
+
+    <div id="board">
+        <!-- <div class="tile x2">2</div>
+      <div class="tile x4">4</div>
+      <div class="tile x8">8</div>
+      <div class="tile x16">16</div> -->
+    </div>
+
+    <!-- Game Over Modal -->
+    <div id="gameOverModal" style="display:none;">
+      <div class="modal-content">
+        <h2>Game Over!</h2>
+        <p>Your final score: <span id="finalScore">0</span></p>
+        <button onclick="restartGame()"></button>
+      </div>
+    </div>
+
+  </body>
+</html>
