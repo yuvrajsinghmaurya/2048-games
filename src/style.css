@@ -1,0 +1,124 @@
+/* General Page Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background-color: #faf8ef;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 60px;
+  color: #776e65;
+  margin-top: 40px;
+}
+
+h2 {
+  color: #776e65;
+  font-weight: 600;
+}
+
+hr {
+  width: 400px;
+  border: 1px solid #bbada0;
+  margin-bottom: 20px;
+}
+
+/* Board Styling */
+#board {
+  width: 420px;
+  height: 420px;
+  background-color: #bbada0;
+  border-radius: 10px;
+  margin: 20px auto;
+  padding: 10px;
+
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+}
+
+/* Tile Base Style */
+.tile {
+  width: 90px;
+  height: 90px;
+  background-color: #cdc1b4;
+  border-radius: 6px;
+  border: 2px solid black;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 35px;
+  font-weight: bold;
+  color: #776e65;
+}
+
+/* Tile Colors (Classic 2048 Theme) */
+.x2 {
+  background-color: #eee4da;
+}
+
+.x4 {
+  background-color: #ede0c8;
+}
+
+.x8 {
+  background-color: #f2b179;
+  color: #f9f6f2;
+}
+
+.x16 {
+  background-color: #f59563;
+  color: #f9f6f2;
+}
+
+.x32 {
+  background-color: #f67c5f;
+  color: #f9f6f2;
+}
+
+.x64 {
+  background-color: #f65e3b;
+  color: #f9f6f2;
+}
+
+.x128 {
+  background-color: #edcf72;
+  color: #f9f6f2;
+}
+
+.x256 {
+  background-color: #edcc61;
+  color: #f9f6f2;
+}
+
+.x512 {
+  background-color: #edc850;
+  color: #f9f6f2;
+}
+
+.x1024 {
+  background-color: #edc53f;
+  color: #f9f6f2;
+}
+
+.x2048 {
+  background-color: #edc22e;
+  color: #f9f6f2;
+}
+.x4096 {
+  background-color: #edc22e;
+  color: #f9f6f2;
+}
+.x8192 {
+  background-color: #edc22e;
+  color: #f9f6f2;
+}
+
+/* Optional Hover Effect for Testing */
+.tile:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease;
+}
