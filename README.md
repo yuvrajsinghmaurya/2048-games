@@ -30,7 +30,7 @@ How to Play
 
 Use the arrow keys to slide tiles in four directions (up, down, left, right).
 Combine tiles with the same number to double their value (e.g., 2 + 2 = 4).
-A new 2 tile appears after each move.
+A new 2 or 4 tile appears after each move.
 Aim to create a tile with the value 2048.
 The game ends when no moves are possible; click "Restart" to play again.
 
@@ -53,10 +53,35 @@ The game is hosted at https://yuvrajsinghmaurya.github.io/2048-games/.
 
 Project Structure
 
-index.html: Main HTML structure.
-src/main.js: Game logic and interactivity.
-src/style.css: Styling for the game board and tiles.
-vite.config.js: Vite configuration for development and deployment.
+index.html: Main HTML structure with the game board and modal.
+src/main.js: Game logic, including tile movement, merging, and game-over detection.
+src/style.css: Styling for the game board, tiles, and modal.
+vite.config.js: Vite configuration for development and deployment to GitHub Pages.
+
+Implementation Details
+Slide Algorithm
+The game implements a sliding mechanism to move and merge tiles. The slide() function:
+
+Filters out zero values to focus on active tiles.
+Compares adjacent tiles; if they match, they merge into their sum (e.g., 2 + 2 = 4), and the score increases by the new value.
+Pads the row with zeros to maintain the 4x4 structure.
+This is applied in four directions (left, right, up, down) by rotating the board logic:
+slideLeft() and slideRight() operate on rows.
+slideUp() and slideDown() transpose the board into columns using array slicing.
+
+
+The algorithm ensures a single merge per pair per move, preventing multiple merges in one slide.
+
+State Management
+
+The game state is managed using a 2D board array (4x4) initialized with zeros, representing tile positions.
+The score variable tracks points, incremented when tiles merge.
+State updates occur imperatively:
+setGame() resets board and score.
+slide*() functions modify board directly and call updateRow() or updateCol() to reflect changes in the DOM.
+
+
+A modal (gameOverModal) toggles visibility based on isGameOver(), which checks for no empty tiles and no possible merges.
 
 Contributing
 Feel free to fork this repository, make improvements, and submit pull requests. Issues and suggestions are welcome!
